@@ -1,0 +1,50 @@
+# SO-ARM Hardware Interface Parameters
+
+so_arm_hardware:
+  ros__parameters:
+    # Serial port configuration
+    port: "/dev/ttyACM0"
+    baudrate: 1000000  # 1M baud
+
+    # Safety limits
+    max_temperature: 70.0  # Maximum servo temperature in Celsius
+    max_current: 1000      # Maximum current in mA
+
+    # Communication parameters
+    read_timeout_ms: 10
+    write_timeout_ms: 5
+    max_retries: 3
+
+    # Servo ID mapping (joint_name -> servo_id)
+    # These correspond to the physical servo IDs
+    servo_ids:
+      Rotation: 1
+      Pitch: 2
+      Elbow: 3
+      Wrist_Pitch: 4
+      Wrist_Roll: 5
+      Jaw: 6
+
+    # Position conversion parameters
+    # Servo center position (default: 2048 for STS3215)
+    position_offsets:
+      Rotation: 2048.0
+      Pitch: 2048.0
+      Elbow: 2048.0
+      Wrist_Pitch: 2048.0
+      Wrist_Roll: 2048.0
+      Jaw: 2048.0
+
+    # Position scale factor (radians per servo unit)
+    # Default: 2*PI/4096 ≈ 0.00153398
+    position_scales:
+      Rotation: 0.00153398
+      Pitch: 0.00153398
+      Elbow: 0.00153398
+      Wrist_Pitch: 0.00153398
+      Wrist_Roll: 0.00153398
+      Jaw: 0.00153398
+
+    # Motion parameters
+    default_speed: 2400        # Default servo speed (0-4095)
+    default_acceleration: 50   # Default acceleration (0-254)

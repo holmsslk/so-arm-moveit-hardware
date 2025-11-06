@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/holms/so-arm_moveit_isaacsim_ws/**)",
+      "Bash(colcon build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<library path="so_arm_hardware">
+  <class name="so_arm_hardware/SoArmHardwareInterface"
+         type="so_arm_hardware::SoArmHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      SO-ARM hardware interface for Feetech STS3215 servos.
+      Provides position control and state feedback for 6-DOF robotic arm.
+    </description>
+  </class>
+</library>
