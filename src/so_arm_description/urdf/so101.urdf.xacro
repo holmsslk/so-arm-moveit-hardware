@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="so101">
+
+  <!-- 定义可传参路径 -->
+  <xacro:arg name="mesh_package" default="so_arm_description"/>
+  <xacro:arg name="model_file" default="so101_new_calib.urdf"/>
+  <xacro:arg name="use_hardware" default="false"/>
+
+  <!-- 直接包含现有URDF -->
+  <xacro:include filename="so101_new_calib.urdf"/>
+
+  <!-- 包含 ros2_control 配置 -->
+  <!-- 根据参数选择使用真实硬件或仿真 -->
+  <xacro:if value="$(arg use_hardware)">
+    <xacro:include filename="so101.ros2_control.hardware.xacro"/>
+  </xacro:if>
+  <xacro:unless value="$(arg use_hardware)">
+    <xacro:include filename="so101.ros2_control.xacro"/>
+  </xacro:unless>
+
+</robot>
