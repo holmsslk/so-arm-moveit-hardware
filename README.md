@@ -1,6 +1,6 @@
-# SO-ARM MoveIt Isaac Sim Workspace
+# SO-ARM MoveIt Workspace
 
-一个基于 ROS2 Humble 的 6 自由度机械臂控制系统，支持真实硬件控制、MoveIt 运动规划和 Isaac Sim 仿真。
+一个基于 ROS2 Humble 的 6 自由度机械臂控制系统，支持真实硬件控制和 MoveIt 运动规划。
 
 ## 🎯 项目简介
 
@@ -9,18 +9,18 @@ SO-ARM 是一个完整的机械臂控制解决方案，集成了：
 - **硬件接口**: 支持 Feetech ST-3215-C001 舵机的 ROS2 Control 硬件接口
 - **运动规划**: 基于 MoveIt 2 的轨迹规划和执行
 - **可视化**: RViz2 交互式控制界面
-- **仿真支持**: Isaac Sim 集成（开发中）
 
 ## 📦 包结构
 
 ```
-so-arm_moveit_isaacsim_ws/
+so-arm_moveit_ws/
 ├── so_arm_description/      # 机械臂 URDF 模型和网格文件
 ├── so_arm_moveit_config/    # MoveIt 配置文件
 ├── so_arm_bringup/          # 启动文件和配置
 ├── so_arm_hardware/         # 硬件接口实现
 ├── so_arm_interfaces/       # 自定义消息和服务
-└── so_arm_commander_cpp/    # 高级控制接口
+├── so_arm_commander_cpp/    # 高级控制接口
+└── so_arm_tasks/            # 任务执行模块
 ```
 
 ## 🚀 快速开始
@@ -50,7 +50,7 @@ sudo apt install ros-humble-joint-state-publisher-gui
 ### 3. 编译项目
 
 ```bash
-cd ~/so-arm_moveit_isaacsim_ws
+cd ~/so-arm_moveit_ws
 colcon build
 source install/setup.bash
 ```

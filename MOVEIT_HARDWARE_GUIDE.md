@@ -17,7 +17,7 @@
 ### 方法 1：一键启动完整系统（推荐）
 
 ```bash
-cd ~/so-arm_moveit_isaacsim_ws
+cd ~/so-arm_moveit_ws
 source install/setup.bash
 ros2 launch so_arm_bringup so_arm_moveit_hardware.launch.py
 ```

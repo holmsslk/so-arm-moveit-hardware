@@ -1,0 +1,87 @@
+# Named Poses Configuration for SO-ARM Commander
+# All joint positions are in radians
+# Joint order: [joint1, joint2, joint3, joint4, joint5, joint6]
+
+so_arm_commander:
+  named_poses:
+    # ========================================
+    # Pre-defined Poses
+    # ========================================
+
+    home:
+      description: "Home position - all joints at zero"
+      joints: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    ready:
+      description: "Ready position - standard working pose"
+      joints: [0.0, -0.5, 0.8, 0.3, 0.0, 0.0]
+
+    observe:
+      description: "Observation position - high camera viewpoint"
+      joints: [0.0, -0.8, 1.0, -0.2, 0.0, 0.0]
+
+    sleep:
+      description: "Sleep position - compact storage pose"
+      joints: [0.0, 1.2, -1.5, 0.3, 0.0, 0.0]
+
+    # ========================================
+    # Custom Poses (Examples)
+    # ========================================
+
+    # Uncomment and modify these examples to create your own poses
+
+    # pick_left:
+    #   description: "Left picking position"
+    #   joints: [0.785, -0.5, 0.8, 0.3, 0.0, 0.0]  # 45° left
+
+    # pick_right:
+    #   description: "Right picking position"
+    #   joints: [-0.785, -0.5, 0.8, 0.3, 0.0, 0.0]  # 45° right
+
+    # pick_center:
+    #   description: "Center picking position"
+    #   joints: [0.0, -0.5, 0.8, 0.3, 0.0, 0.0]
+
+    # inspect_top:
+    #   description: "Top-down inspection view"
+    #   joints: [0.0, -1.2, 1.5, -0.3, 0.0, 0.0]
+
+  # ========================================
+  # Planning Configuration
+  # ========================================
+
+  planning:
+    planning_time: 5.0              # seconds
+    velocity_scaling: 0.5           # 0.0 to 1.0
+    acceleration_scaling: 0.5       # 0.0 to 1.0
+
+  # ========================================
+  # Workspace Bounds (meters)
+  # ========================================
+
+  workspace:
+    min_x: 0.05
+    max_x: 0.35
+    min_y: -0.25
+    max_y: 0.25
+    min_z: 0.05
+    max_z: 0.40
+
+  # ========================================
+  # Gripper Configuration
+  # ========================================
+
+  gripper:
+    open_position: 1.0              # Fully open
+    closed_position: 0.0            # Fully closed
+    joint_index: 5                  # Index of gripper joint
+
+  # ========================================
+  # Pick and Place Parameters
+  # ========================================
+
+  pick_place:
+    approach_distance: 0.10         # meters above grasp
+    retreat_distance: 0.10          # meters after place
+    grasp_velocity_scaling: 0.3     # Slow for safety
+    lift_velocity_scaling: 0.3      # Slow for safety

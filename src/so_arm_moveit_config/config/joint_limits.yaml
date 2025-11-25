@@ -5,8 +5,8 @@
     # For beginners, we downscale velocity and acceleration limits.
     # You can always specify higher scaling factors (<= 1.0) in your motion requests.
     # Increase the values below to 1.0 to always move at maximum speed.
-    default_velocity_scaling_factor: 0.1
-    default_acceleration_scaling_factor: 0.1
+    default_velocity_scaling_factor: 0.5   # 增加到 50% - 更合理的速度
+    default_acceleration_scaling_factor: 0.5  # 增加到 50% - 更合理的加速度
 
     # Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
     # Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
@@ -16,28 +16,46 @@
         max_velocity: 10.0
         has_acceleration_limits: false
         max_acceleration: 0.0
+        has_position_limits: true
+        min_position: -3.14  # 扩大限位以适应实际硬件
+        max_position: 3.14
       Jaw:
         has_velocity_limits: true
         max_velocity: 10.0
         has_acceleration_limits: false
         max_acceleration: 0.0
+        has_position_limits: true
+        min_position: -0.5  # 扩大到 -0.5 rad（约 -28.6°）
+        max_position: 1.75
       Pitch:
         has_velocity_limits: true
         max_velocity: 10.0
         has_acceleration_limits: false
         max_acceleration: 0.0
+        has_position_limits: true
+        min_position: -3.14
+        max_position: 3.14
       Rotation:
         has_velocity_limits: true
         max_velocity: 10.0
         has_acceleration_limits: false
         max_acceleration: 0.0
+        has_position_limits: true
+        min_position: -3.14
+        max_position: 3.14
       Wrist_Pitch:
         has_velocity_limits: true
         max_velocity: 10.0
         has_acceleration_limits: false
         max_acceleration: 0.0
+        has_position_limits: true
+        min_position: -3.14
+        max_position: 3.14
       Wrist_Roll:
         has_velocity_limits: true
         max_velocity: 10.0
         has_acceleration_limits: false
         max_acceleration: 0.0
+        has_position_limits: true
+        min_position: -3.14
+        max_position: 3.14

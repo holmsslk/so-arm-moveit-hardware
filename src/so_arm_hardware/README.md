@@ -35,7 +35,7 @@ sudo chmod 666 /dev/ttyACM0
 ### 2. Build the Package
 
 ```bash
-cd ~/so-arm_moveit_isaacsim_ws
+cd ~/so-arm_moveit_ws
 colcon build --packages-select so_arm_hardware so_arm_description
 source install/setup.bash
 ```

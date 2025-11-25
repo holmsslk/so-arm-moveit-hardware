@@ -25,3 +25,29 @@ arm_controller:
     state_interfaces:
       - position
       - velocity
+
+    # 状态发布
+    state_publish_rate: 50.0  # Hz
+
+    # 动作服务器配置
+    action_monitor_rate: 20.0  # Hz
+
+    # 轨迹容差 - 轨迹执行期间的允许误差
+    constraints:
+      stopped_velocity_tolerance: 0.05  # rad/s
+      goal_time: 0.0  # 0 表示不检查时间约束，只检查位置
+
+    # 目标容差 - 到达目标的判定标准
+    # 设置较大的容差以适应实际硬件
+    Rotation:
+      goal: 0.05  # rad (~2.86 度)
+    Pitch:
+      goal: 0.05
+    Elbow:
+      goal: 0.05
+    Wrist_Pitch:
+      goal: 0.05
+    Wrist_Roll:
+      goal: 0.05
+    Jaw:
+      goal: 0.05

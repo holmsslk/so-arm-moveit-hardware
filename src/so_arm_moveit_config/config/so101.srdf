@@ -39,4 +39,10 @@
     <disable_collisions link1="lower_arm" link2="upper_arm" reason="Adjacent"/>
     <disable_collisions link1="lower_arm" link2="wrist" reason="Adjacent"/>
     <disable_collisions link1="shoulder" link2="upper_arm" reason="Adjacent"/>
+    <!-- Additional collision pairs that can be safely ignored due to mechanical design -->
+    <disable_collisions link1="shoulder" link2="lower_arm" reason="Default"/>
+    <disable_collisions link1="base_link" link2="lower_arm" reason="Never"/>
+    <disable_collisions link1="shoulder" link2="wrist" reason="Never"/>
+    <disable_collisions link1="upper_arm" link2="wrist" reason="Never"/>
+    <disable_collisions link1="upper_arm" link2="gripper" reason="Never"/>
 </robot>

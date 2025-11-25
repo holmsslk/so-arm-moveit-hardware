@@ -404,6 +404,9 @@ bool SoArmHardwareInterface::scanAndVerifyServos()
 {
   RCLCPP_INFO(rclcpp::get_logger("SoArmHardwareInterface"), "Scanning for servos...");
 
+  // Give servo driver time to settle after initialization
+  std::this_thread::sleep_for(std::chrono::milliseconds(200));
+
   std::vector<uint8_t> found_servos = servo_driver_->scanServos(1, 20);
 
   RCLCPP_INFO(
